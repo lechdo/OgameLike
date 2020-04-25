@@ -6,113 +6,112 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using BO;
 using BO.Entities;
 using Jeu.Data;
 
 namespace Jeu.Controllers
 {
-    public class ResourcesController : Controller
+    public class SolarSystemsController : Controller
     {
         private JeuContext db = new JeuContext();
 
-        // GET: Resources
+        // GET: SolarSystems
         public ActionResult Index()
         {
-            return View(db.Resources.ToList());
+            return View(db.SolarSystems.ToList());
         }
 
-        // GET: Resources/Details/5
+        // GET: SolarSystems/Details/5
         public ActionResult Details(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resource resource = db.Resources.Find(id);
-            if (resource == null)
+            SolarSystem solarSystem = db.SolarSystems.Find(id);
+            if (solarSystem == null)
             {
                 return HttpNotFound();
             }
-            return View(resource);
+            return View(solarSystem);
         }
 
-        // GET: Resources/Create
+        // GET: SolarSystems/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Resources/Create
+        // POST: SolarSystems/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,LastQuantity,LastUpdate")] Resource resource)
+        public ActionResult Create([Bind(Include = "Id,Name")] SolarSystem solarSystem)
         {
             if (ModelState.IsValid)
             {
-                db.Resources.Add(resource);
+                db.SolarSystems.Add(solarSystem);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(resource);
+            return View(solarSystem);
         }
 
-        // GET: Resources/Edit/5
+        // GET: SolarSystems/Edit/5
         public ActionResult Edit(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resource resource = db.Resources.Find(id);
-            if (resource == null)
+            SolarSystem solarSystem = db.SolarSystems.Find(id);
+            if (solarSystem == null)
             {
                 return HttpNotFound();
             }
-            return View(resource);
+            return View(solarSystem);
         }
 
-        // POST: Resources/Edit/5
+        // POST: SolarSystems/Edit/5
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,LastQuantity,LastUpdate")] Resource resource)
+        public ActionResult Edit([Bind(Include = "Id,Name")] SolarSystem solarSystem)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(resource).State = EntityState.Modified;
+                db.Entry(solarSystem).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(resource);
+            return View(solarSystem);
         }
 
-        // GET: Resources/Delete/5
+        // GET: SolarSystems/Delete/5
         public ActionResult Delete(long? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resource resource = db.Resources.Find(id);
-            if (resource == null)
+            SolarSystem solarSystem = db.SolarSystems.Find(id);
+            if (solarSystem == null)
             {
                 return HttpNotFound();
             }
-            return View(resource);
+            return View(solarSystem);
         }
 
-        // POST: Resources/Delete/5
+        // POST: SolarSystems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
-            Resource resource = db.Resources.Find(id);
-            db.Resources.Remove(resource);
+            SolarSystem solarSystem = db.SolarSystems.Find(id);
+            db.SolarSystems.Remove(solarSystem);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO.Entities;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -14,11 +15,15 @@ namespace Jeu.Data
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
+
         public JeuContext() : base("name=JeuContext")
         {
         }
 
-        public System.Data.Entity.DbSet<BO.Resource> Resources { get; set; }
+        public DbSet<Resource> Resources { get; set; }
+
+        public DbSet<Planet> Planets { get; set; }
+
+        public DbSet<SolarSystem> SolarSystems { get; set; }
     }
 }

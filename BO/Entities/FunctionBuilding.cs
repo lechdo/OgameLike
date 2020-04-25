@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BO
+namespace BO.Entities
 {
-    public abstract class ResourceGenerator : Building
+    public abstract class FunctionBuilding : Building
     {
-        public List<Resource> ResourceBySecond()
+        public List<Action> Actions()
         {
             throw new NotImplementedException();
         }

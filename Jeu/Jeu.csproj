@@ -127,11 +127,22 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlanetsController.cs" />
     <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\SolarSystemsController.cs" />
     <Compile Include="Data\JeuContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004241421021_initial.cs" />
+    <Compile Include="Migrations\202004241421021_initial.Designer.cs">
+      <DependentUpon>202004241421021_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004251022229_annotations.cs" />
+    <Compile Include="Migrations\202004251022229_annotations.Designer.cs">
+      <DependentUpon>202004251022229_annotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -175,9 +186,20 @@
     <Content Include="Views\Resources\Details.cshtml" />
     <Content Include="Views\Resources\Edit.cshtml" />
     <Content Include="Views\Resources\Index.cshtml" />
+    <Content Include="Views\Planets\Create.cshtml" />
+    <Content Include="Views\Planets\Delete.cshtml" />
+    <Content Include="Views\Planets\Details.cshtml" />
+    <Content Include="Views\Planets\Edit.cshtml" />
+    <Content Include="Views\Planets\Index.cshtml" />
+    <Content Include="Views\SolarSystems\Create.cshtml" />
+    <Content Include="Views\SolarSystems\Delete.cshtml" />
+    <Content Include="Views\SolarSystems\Details.cshtml" />
+    <Content Include="Views\SolarSystems\Edit.cshtml" />
+    <Content Include="Views\SolarSystems\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helper\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +220,14 @@
       <Project>{917051c4-c809-4081-869c-76f4d0693d22}</Project>
       <Name>BO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004241421021_initial.resx">
+      <DependentUpon>202004241421021_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004251022229_annotations.resx">
+      <DependentUpon>202004251022229_annotations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
