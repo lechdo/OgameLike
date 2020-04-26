@@ -16,21 +16,14 @@ namespace BO.Entities
         public int? Level { get; set; }
 
 
-        public int? CellNb
+        public int? CellNb 
         {
             get { return Level + 1; }
         }
 
-        public List<Resource> TotalCost
-        {
-            get { throw new NotImplementedException(); }
+        public abstract List<Resource> TotalCost {get;}
 
-        }
-
-        public List<Resource> NextCost
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public abstract List<Resource> NextCost {get;}
 
         
     }

@@ -8,9 +8,7 @@ namespace BO.Entities
 {
     public abstract class ResourceGenerator : Building
     {
-        public List<Resource> ResourceBySecond
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public abstract List<Resource> ResourceBySecond { get; }
+    
     }
 }
