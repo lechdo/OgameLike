@@ -1,4 +1,4 @@
-﻿using BO.Validators;
+﻿using BO.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BO.Extensions
 {
+    // contient uneft
     public static class ResourceNameExtension
     {
         // paramètre value est l'énumération visée.

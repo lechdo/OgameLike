@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BO.Entities.ConcretBuildings
 {
-    class SteelGenerator : ResourceGenerator
+    public class SteelGenerator : ResourceGenerator
     {
         private Func<int?, int?> energyFunc = x => x;
         private Func<int?, int?> oxygenFunc = x => (int?) (2 * Math.Pow(x.Value, 3) + (300 * (x / 6)) + 50);

@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Building.cs" />
+    <Compile Include="Entities\Configuration.cs" />
+    <Compile Include="Entities\ConfigurationItem.cs" />
+    <Compile Include="Entities\Configurations\GameConfiguration.cs" />
+    <Compile Include="Entities\Configurations\PlanetConfiguration.cs" />
     <Compile Include="Entities\FunctionBuilding.cs" />
     <Compile Include="Entities\IDbEntity.cs" />
     <Compile Include="Entities\ConcretBuildings\OxygenGenerator.cs" />
@@ -58,7 +62,7 @@
     <Compile Include="Entities\SolarSystem.cs" />
     <Compile Include="Utils\MathTools.cs" />
     <Compile Include="Validators\DatetimeNotBeyondNow.cs" />
-    <Compile Include="Validators\NameAttribute.cs" />
+    <Compile Include="Annotations\NameAttribute.cs" />
     <Compile Include="Validators\ResourcesListValidator.cs" />
   </ItemGroup>
   <ItemGroup />
