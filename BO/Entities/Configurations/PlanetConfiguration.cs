@@ -10,11 +10,11 @@ namespace BO.Entities.Configurations
     {
 
         // utilise la clé de l'enumération des resources
-        public List<int?> ResourceKinds { get; set; } = new List<int?>();
+        public List<int> ResourceKinds { get; set; } = new List<int>();
 
 
         // TODO : idem, enumération des buildings à réaliser
-        public List<int?> PlanetBuildingKinds { get; set; } = new List<int?>();
+        public List<int> PlanetBuildingKinds { get; set; } = new List<int>();
 
     }
 }
